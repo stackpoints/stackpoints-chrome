@@ -1,0 +1,52 @@
+{
+    "manifest_version": 3,
+    "name": "StackPoints",
+    "description": "Rewarding stackexchange community.",
+    "version": "1.0",
+    "action": {       
+        "default_icon": "assets/icons/icon-32.png",
+        "default_popup": "index.html"
+    },
+    "icons": {
+        "16": "assets/icons/icon-16.png",
+        "32": "assets/icons/icon-32.png",
+        "48": "assets/icons/icon-64.png",
+        "128": "assets/icons/icon-128.png"
+    },
+    "background": {
+        "service_worker": "src/background.jsx"
+    },
+    "content_scripts": [        {
+           
+            "js": [              
+                "src/content_scripts/content_script.jsx"             
+                ],            
+            "matches": [
+                "https://*.mathoverflow.net/*",                
+                "https://*.superuser.com/*",              
+                "https://*.stackoverflow.com/*",                
+                "https://*.serverfault.com/*",                
+                "https://*.stackapps.com/*",                
+                "https://*.stackexchange.com/*",                
+                "https://*.stackoverflow.com/*",                
+                "https://*.askubuntu.com/*"
+                
+            ]
+        }
+    ],
+    "permissions": [
+        "scripting",        
+        "background", 
+        "storage",      
+        "https://*.mathoverflow.net/*",       
+        "https://*.superuser.com/*",        
+        "https://*.stackoverflow.com/*",        
+        "https://*.serverfault.com/*",        
+        "https://*.stackapps.com/*",      
+        "https://*.stackexchange.com/*",       
+        "https://*.stackoverflow.com/*",       
+        "https://*.askubuntu.com/*"
+       
+    ]
+ 
+}
